@@ -4,18 +4,23 @@ import java.io.File;
 //welcome to your first coding puzzle of the course 
 //your second task and first keyword are located 
 //in the one hundred and twenty three characters after the tenth giraffe
+
 public class Puzzle {
     public static void main(String []args) throws Exception{
         File text = new File("puzzle.txt");
         Scanner read = new Scanner(text);
         String word = read.nextLine();
-        
-        int index = word.indexOf("giraffe");
-        for(int i =0;i<9;i++){
-            index = word.indexOf("giraffe");
-            word = word.substring(index+7,word.length());
+        String cutText = word;
+
+        for(int i =0;i<10;i++){
+            cutText = cutText.substring(cutText.indexOf("giraffe")+7);
         }
-        word = word.substring(index,index+123);
-        System.out.println(word);
+        cutText=cutText.substring(0,123);
+        System.out.println(cutText);
+        //armadillo your next task and keyword are located in the 
+        //one hundred and five characters after the longest string of 
+        //the same consecutive character\
+        
+        
     }
 }
