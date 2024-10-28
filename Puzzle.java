@@ -96,5 +96,13 @@ public class Puzzle {
         
         // ostrich your final keyword is located 
         // in the six characters after a palindrome of length eleven
+        String palen = word;
+        String eleven = "";
+        for(int i =0;i<word.length()-11;i++){
+            if(palen.substring(i,i+4).equals(palen.substring(i+6,i+10))){
+                eleven = palen.substring(i,i+10);
+            }
+        }
+        System.out.println(eleven);
     }
 }
