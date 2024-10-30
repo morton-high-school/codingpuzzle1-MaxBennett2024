@@ -69,7 +69,7 @@ public class Puzzle {
          System.out.println(palindrome.substring(bestIndex+11,bestIndex+116));
          System.out.println("");
 
-        // penguin your next task an dkeyword are located in the 
+        // penguin your next task and keyword are located in the 
         // eighty characters after the string of length thirty with the most vowels
 
         int count = 0;
@@ -97,12 +97,21 @@ public class Puzzle {
         // ostrich your final keyword is located 
         // in the six characters after a palindrome of length eleven
         String palen = word;
-        String eleven = "";
-        for(int i =0;i<word.length()-11;i++){
-            if(palen.substring(i,i+4).equals(palen.substring(i+6,i+10))){
-                eleven = palen.substring(i,i+10);
+        String reverse = "";
+        String finalWord = "";
+        String eleven ="";
+        for(int i =0;i<palen.length()-11;i++){
+            eleven = palen.substring(i,i+11);
+            for(int j = eleven.length();j>0;j--){
+                reverse=reverse + eleven.substring(j-1,j);
             }
+            if(eleven.equals(reverse)){
+                finalWord = eleven + word.substring(i+11,i+17);
+                System.out.println(finalWord);
+                break;
+            }
+            reverse = "";
         }
-        System.out.println(eleven);
+        //yobananaboy badger
     }
 }
